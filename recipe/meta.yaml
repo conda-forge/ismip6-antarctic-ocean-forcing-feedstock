@@ -1,60 +1,60 @@
-{% set version = "1.1" %}
+{% set version = "1.2.0" %}
 
 package:
-    name: ismip6-antarctic-ocean-forcing
-    version: {{ version }}
+  name: ismip6-antarctic-ocean-forcing
+  version: {{ version }}
 
 source:
-     url: https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/{{ version }}.tar.gz
-     sha256: 9b7551a485af32efafc53b6f4141e2355b8f6898d69afabe117dfcf89dc6e01d
+  url: https://github.com/ismip/ismip6-antarctic-ocean-forcing/archive/{{ version }}.tar.gz
+  sha256: c09fa1b1677e5357e976153423a9f1f105883611fcfe05c8be2c45d318fcf1a6
 
 build:
-    number: 1
-    script: {{ PYTHON }} -m pip install . -vv
-    noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
 
 requirements:
-    host:
-        - python {{ python_min }}
-        - pip
-        - setuptools
-    run:
-        - python >={{ python_min }}
-        - dask
-        - descartes
-        - gsw
-        - imageio
-        - matplotlib-base
-        - nco
-        - netcdf4
-        - numpy
-        - progressbar2
-        - pyremap <0.1.0
-        - pyshp
-        - requests
-        - scikit-fmm
-        - scipy
-        - shapely
-        - xarray
+  host:
+    - python {{ python_min }}
+    - pip
+    - setuptools
+  run:
+    - python >={{ python_min }}
+    - dask
+    - descartes
+    - gsw
+    - imageio
+    - matplotlib-base
+    - nco
+    - netcdf4
+    - numpy
+    - progressbar2
+    - pyremap <0.1.0
+    - pyshp
+    - requests
+    - scikit-fmm
+    - scipy
+    - shapely
+    - xarray
 
 test:
-    requires:
-        - pip
-        - python {{ python_min }}
-    imports:
-        - ismip6_ocean_forcing
-    commands:
-        - ismip6_ocean_forcing --version
-        - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
+  imports:
+    - ismip6_ocean_forcing
+  commands:
+    - ismip6_ocean_forcing --version
+    - pip check
 
 
 about:
-    home:  https://github.com/ismip/ismip6-antarctic-ocean-forcing
-    license: MIT
-    license_family: MIT
-    license_file: LICENSE
-    summary: A python package for creating ISMIP6 ocean forcing data sets.
+  home: https://github.com/ismip/ismip6-antarctic-ocean-forcing
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: A python package for creating ISMIP6 ocean forcing data sets.
 
 extra:
-    recipe-maintainers:
-        - xylar
+  recipe-maintainers:
+    - xylar
