@@ -17,11 +17,11 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=42
   run:
     - python >={{ python_min }}
     - dask
-    - descartes
+    - descartes >=1.1.0
     - gsw
     - imageio
     - matplotlib-base
@@ -29,12 +29,12 @@ requirements:
     - netcdf4
     - numpy
     - progressbar2
-    - pyremap <0.1.0
+    - pyremap >=1.4.1
     - pyshp
     - requests
     - scikit-fmm
     - scipy
-    - shapely
+    - shapely >=2.0
     - xarray
 
 test:
